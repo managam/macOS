@@ -22,27 +22,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgv-Jc-by5">
-                        <rect key="frame" x="7" y="13" width="96" height="32"/>
-                        <buttonCell key="cell" type="push" title="Add Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BVu-lW-dZi">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qu-Yp-C0o">
-                        <rect key="frame" x="13" y="258" width="240" height="135"/>
-                        <clipView key="contentView" ambiguous="YES" id="jLW-f8-Kyp">
-                            <rect key="frame" x="1" y="0.0" width="238" height="134"/>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qu-Yp-C0o">
+                        <rect key="frame" x="20" y="46" width="467" height="347"/>
+                        <clipView key="contentView" id="jLW-f8-Kyp">
+                            <rect key="frame" x="1" y="0.0" width="465" height="346"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="jxk-LV-7gt" id="rhu-0D-xaC">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="111"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="465" height="323"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="116" minWidth="40" maxWidth="1000" id="2wH-f8-T3D">
+                                        <tableColumn width="462" minWidth="40" maxWidth="1000" id="2wH-f8-T3D">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -64,16 +57,33 @@
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="4xP-vC-vtj">
-                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="4xP-vC-vtj">
+                            <rect key="frame" x="450" y="23" width="16" height="8"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="jxk-LV-7gt">
-                            <rect key="frame" x="0.0" y="0.0" width="238" height="23"/>
+                            <rect key="frame" x="0.0" y="0.0" width="465" height="23"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgv-Jc-by5">
+                        <rect key="frame" x="14" y="13" width="96" height="32"/>
+                        <buttonCell key="cell" type="push" title="Add Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BVu-lW-dZi">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="8qu-Yp-C0o" secondAttribute="bottom" constant="46" id="1Ue-zx-qSh"/>
+                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="leading" secondItem="Cgv-Jc-by5" secondAttribute="leading" id="4Ev-vw-Pdp"/>
+                    <constraint firstAttribute="trailing" secondItem="8qu-Yp-C0o" secondAttribute="trailing" constant="20" symbolic="YES" id="8cu-1a-jAU"/>
+                    <constraint firstAttribute="bottom" secondItem="Cgv-Jc-by5" secondAttribute="bottom" constant="20" symbolic="YES" id="Pgg-mF-bzh"/>
+                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" symbolic="YES" id="RdM-Cs-qYR"/>
+                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" id="lDl-q9-eYE"/>
+                    <constraint firstItem="Cgv-Jc-by5" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" id="uGG-1C-u8g"/>
+                    <constraint firstItem="Cgv-Jc-by5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8qu-Yp-C0o" secondAttribute="bottom" constant="20" symbolic="YES" id="x4F-AW-xsg"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
