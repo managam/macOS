@@ -14,6 +14,7 @@
 
 @implementation Document
 
+#pragma mark - NSDocument overrides
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -45,6 +46,57 @@
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
     [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
     return YES;
+}
+
+#pragma mark - Actions
+- (void)addTask:(id)sender
+{
+    // NSLog(@"Add Task button clicked.");
+    // If there is no array yet, create one
+    if (!self.tasks) {
+        self.tasks = [[NSMutableArray alloc] init];
+    }
+    
+    [self.tasks addObject:@"New item"];
+    
+    // -reloadData tells the table view to refresh and ask its dataSource
+    // (which happens to be this BNRDocument object in this case)
+    // for new data to display
+    [self.taskTable reloadData];
+    
+    // -updateChangeCount: tells the application whether or not the document
+    // has unsaved changes, NSChangeDone flags the document as unsaved
+    [self updateChangeCount:NSChangeDone];
+}
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    // This table view displays the tasks array,
+    // so the number of entries in the table view will be the same
+    // as the number of objects in the array
+    return  self.tasks.count;
+}
+
+- (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn
+             row:(NSInteger)row
+{
+    // Return the item from tasks that corresponds to the cell
+    // that the table view wants to display
+    return [self.tasks objectAtIndex:row];
+}
+
+- (void)tableView:(NSTableView *)tableView setObjectValue:(id)object
+   forTableColumn:(NSTableColumn *)tableColumn
+              row:(NSInteger)row
+{
+    // When the user changes a task on the table view,
+    // update the tasks array
+    [self.tasks replaceObjectAtIndex:row
+                          withObject:object];
+    
+    // And then flag the document as having unsaved changes.
+    [self updateChangeCount:NSChangeDone];
 }
 
 @end
