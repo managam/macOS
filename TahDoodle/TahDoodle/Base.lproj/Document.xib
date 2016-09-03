@@ -70,8 +70,18 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q3d-cN-2Ux">
+                        <rect key="frame" x="110" y="6" width="111" height="32"/>
+                        <buttonCell key="cell" type="push" title="Delete Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MLy-xP-GML">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="deleteTask:" target="-2" id="xg2-GJ-Ms4"/>
+                        </connections>
+                    </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cgv-Jc-by5">
-                        <rect key="frame" x="14" y="13" width="96" height="17"/>
+                        <rect key="frame" x="14" y="6" width="96" height="32"/>
                         <buttonCell key="cell" type="push" title="Add Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BVu-lW-dZi">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -82,14 +92,14 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="8qu-Yp-C0o" secondAttribute="bottom" constant="46" id="1Ue-zx-qSh"/>
-                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="leading" secondItem="Cgv-Jc-by5" secondAttribute="leading" id="4Ev-vw-Pdp"/>
-                    <constraint firstAttribute="trailing" secondItem="8qu-Yp-C0o" secondAttribute="trailing" constant="20" symbolic="YES" id="8cu-1a-jAU"/>
-                    <constraint firstAttribute="bottom" secondItem="Cgv-Jc-by5" secondAttribute="bottom" constant="20" symbolic="YES" id="Pgg-mF-bzh"/>
-                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" symbolic="YES" id="RdM-Cs-qYR"/>
-                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" id="lDl-q9-eYE"/>
-                    <constraint firstItem="Cgv-Jc-by5" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" id="uGG-1C-u8g"/>
-                    <constraint firstItem="Cgv-Jc-by5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8qu-Yp-C0o" secondAttribute="bottom" constant="20" symbolic="YES" id="x4F-AW-xsg"/>
+                    <constraint firstItem="Cgv-Jc-by5" firstAttribute="top" secondItem="8qu-Yp-C0o" secondAttribute="bottom" constant="12" id="0VF-lD-LcC"/>
+                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" symbolic="YES" id="HuA-Y0-MWh"/>
+                    <constraint firstItem="Cgv-Jc-by5" firstAttribute="baseline" secondItem="q3d-cN-2Ux" secondAttribute="baseline" id="LR6-rD-RYd"/>
+                    <constraint firstAttribute="trailing" secondItem="8qu-Yp-C0o" secondAttribute="trailing" constant="20" symbolic="YES" id="Ur9-tK-2f9"/>
+                    <constraint firstItem="q3d-cN-2Ux" firstAttribute="leading" secondItem="Cgv-Jc-by5" secondAttribute="trailing" constant="12" symbolic="YES" id="civ-Aa-4VY"/>
+                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" symbolic="YES" id="gbg-Vt-gJB"/>
+                    <constraint firstAttribute="bottom" secondItem="Cgv-Jc-by5" secondAttribute="bottom" constant="13" id="iuL-ot-3jR"/>
+                    <constraint firstItem="8qu-Yp-C0o" firstAttribute="leading" secondItem="Cgv-Jc-by5" secondAttribute="leading" id="wfP-Ra-Ig1"/>
                 </constraints>
             </view>
             <connections>

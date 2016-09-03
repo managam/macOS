@@ -97,6 +97,15 @@
     [self updateChangeCount:NSChangeDone];
 }
 
+- (void)deleteTask:(id)sender
+{
+    if ([self.taskTable selectedRow] >= 0) {
+        [self.tasks removeObjectAtIndex: [self.taskTable selectedRow]];
+        [self.taskTable reloadData];
+        [self updateChangeCount:NSChangeDone];
+    }
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
@@ -126,5 +135,8 @@
     // And then flag the document as having unsaved changes.
     [self updateChangeCount:NSChangeDone];
 }
+
+#pragma mark - Table view delegate
+
 
 @end
